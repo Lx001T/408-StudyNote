@@ -1,0 +1,28 @@
+# Project: LinkList-Front
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = LinkList-FrontFound.o
+LINKOBJ  = LinkList-FrontFound.o
+LIBS     = -L"D:/DevCpp/Dev-Cpp/MinGW64/lib" -L"D:/DevCpp/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/DevCpp/Dev-Cpp/MinGW64/include" -I"D:/DevCpp/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/DevCpp/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/DevCpp/Dev-Cpp/MinGW64/include" -I"D:/DevCpp/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/DevCpp/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/DevCpp/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = LinkList-Front.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+LinkList-FrontFound.o: LinkList-FrontFound.cpp
+	$(CPP) -c LinkList-FrontFound.cpp -o LinkList-FrontFound.o $(CXXFLAGS)
